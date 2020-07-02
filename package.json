@@ -1,0 +1,42 @@
+{
+  "name": "platzivideo-backend",
+  "version": "1.0.0",
+  "description": "API for platzi video project.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "DEBUG=app:* nodemon index",
+    "start": "NODE_ENV=production node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarioSalinas1605/platziVideo-Backend.git"
+  },
+  "author": "Mario Salinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarioSalinas1605/platziVideo-Backend/issues"
+  },
+  "homepage": "https://github.com/MarioSalinas1605/platziVideo-Backend#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
