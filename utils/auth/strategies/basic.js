@@ -17,6 +17,8 @@ passport.use(new BasicStrategy(async (email, password, cb) => {
             return(boom.unauthorized(), false);
         }
         delete user.password;
+
+        return cb(null, user);
     } catch (error) {
         return cb(error);
     }
