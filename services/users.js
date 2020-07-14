@@ -7,7 +7,7 @@ class UsersService {
         this.mongoDB = new MongoLib();
     }
 
-    async getEmail({ email }) {
+    async getUser({ email }) {
         const [ user ] = await this.mongoDB.getAll(this.collection, { email })
         return user
     }
