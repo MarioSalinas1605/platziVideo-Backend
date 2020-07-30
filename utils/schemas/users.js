@@ -6,14 +6,24 @@ const emailSchema = joi.string().email();
 const passwordSchema = joi.string();
 const isAdminSchema = joi.boolean();
 
-const createUserSchema = {
+const userSchema = {
     name: nameSchema.required(),
     email: emailSchema.required(),
     password: passwordSchema.required(),
+}
+
+const createUserSchema = {
+    ...userSchema,
     isAdmin: isAdminSchema,
+}
+
+const createProviderUserSchema = {
+    ...userSchema,
+    apiKeyToken: joi.string().required()
 }
 
 module.exports = {
     userIdSchema,
-    createUserSchema
+    createUserSchema,
+    createProviderUserSchema
 }
